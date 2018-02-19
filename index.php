@@ -1,0 +1,1 @@
+<?phpfunction __autoload($controller){	include_once("controllers/$controller.php");}$action = 'action';$action .= (isset($_GET['act'])) ? $_GET['act'] : 'Index';if (isset($_GET['admin'])){	$controller = new AdminController();}else{	$controller = new ClientController();}$controller->Request($action);
